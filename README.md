@@ -1,5 +1,9 @@
 # MiniGraphRAG
 
+[![CI](https://github.com/bolongpa/minigraphrag/actions/workflows/ci.yml/badge.svg)](https://github.com/bolongpa/minigraphrag/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](requirements.txt)
+
 A minimal but **complete** implementation of [GraphRAG](https://arxiv.org/abs/2404.16130):
 index documents into a knowledge graph with an LLM, then answer questions with
 **hybrid retrieval** (lexical search + graph traversal) and **cited answers**.
@@ -178,6 +182,27 @@ rag.save("index.pkl")
 - Roadmap: dense-embedding retriever option, eval harness (faithfulness /
   context recall on the demo questions), incremental updates, async batched
   extraction.
+
+## Evaluation status
+
+Demo Q&A outputs use the deterministic offline mock (`--llm fake`) on the 5-document demo corpus — they verify the retrieval and citation machinery, not answer quality against a benchmark. Benchmarks forthcoming (see Roadmap: eval harness).
+
+Related work: this implementation follows the pipeline described in Edge et al., "From Local to Global: A Graph RAG Approach to Query-Focused Summarization" (arXiv:2404.16130, 2024), in minimal, dependency-light form.
+
+## Citation
+
+If you use this project in academic or technical work, please cite it as:
+
+```bibtex
+@software{pan2026minigraphrag,
+  author = {Bolong Pan},
+  title = {MiniGraphRAG: a minimal, complete GraphRAG implementation},
+  year = {2026},
+  url = {https://github.com/bolongpa/minigraphrag}
+}
+```
+
+A Zenodo DOI will be added here once minted.
 
 ## License
 
